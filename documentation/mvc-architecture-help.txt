@@ -1,0 +1,38 @@
+For ANY new resource you need the following:
+
+Routes:
+    GET -> [
+        /resource               => ResourceController::index
+        /resource/new           => ResourceController::_new
+        /resouce/:id            => ResourceController::show
+        /resource/edit/:id      => ResourceController::edit
+        /resource/delete/:id    => ResourceController::delete
+    ],
+    POST -> [
+        /resource/create        => ResourceController::create
+        /resource/update        => ResourceController::update
+    ]
+
+models/ResourceModel:
+    findAll()                   -> fetches all rows from the database
+    find()                      -> fetches an existing row from the database
+    create()                    -> creates a new row in the database
+    update()                    -> updates an existing row in the database
+    delete()                    -> removes an existing row from the database
+
+controllers/ResourceController:
+    index()                     -> collects all resource rows and calls render for resource/index
+    new()                       -> calls render for resource/new
+    show()                      -> collects existing resource row and calls render for resource/show
+    edit()                      -> collects existing resource row and calls render for resource/edit
+    create()                    -> validates and has the model create a new resource row
+    update()                    -> validates and has the model update an existing resource row
+    delete()                    -> validates and has the model remove an existing resource row
+
+views/resource:
+    index                       -> renders list of resource rows
+    new                         -> renders form for new resource
+    edit                        -> renders form for editing existing resource
+    show                        -> renders single resource information
+    _form                       -> partial for new and edit form
+    

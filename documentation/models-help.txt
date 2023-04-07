@@ -1,0 +1,15 @@
+Models:
+
+    Models facilitate communication with the database. They are responsible for all CRUD operations with the database. The controller and the view DO NOT speak directly with the database. This abstraction allows for better scalability and maintainability of our data layer.
+
+    The following are common model methods:
+
+        find($id)    -> requests and returns one specific row from the database
+
+        findAll()    -> requests and returns all rows from the database
+
+        create()     -> inserts one new row in the database
+
+        update($id)  -> updates an existing row in the database
+
+        delete($id)  -> deletes an existing row from the database

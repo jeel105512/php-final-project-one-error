@@ -1,0 +1,504 @@
+*{
+    /* outline: 1px dotted #333; */
+}
+
+:root{
+    --navBg: #141414;
+    --lightBg: #f5f5f5;
+    --black: #000;
+    --white: #fff;
+    --lightText: #bdbdbd;
+    --semiLight: #7d7d7d;
+    --logoColor: #6831ff;
+    --gold: #ffd700;
+    --green: #00d600;
+    --red: #ff0000;
+}
+
+html, body, main, section{
+    height: 100%;
+}
+
+body{
+    padding: 1em 7em;
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+/* Global Navigation */
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+nav .nav-left a{
+    font-size: 2.3rem;
+}
+
+nav .nav-middle{
+    font-size: 1.6rem;
+}
+
+nav .nav-right{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+nav .nav-right a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.nav-icon{
+    font-size: 24pt;
+    color: var(--logoColor);
+}
+
+.new-icon{
+    color: var(--green);
+}
+
+.list-icon{
+    color: var(--gold);
+}
+
+/* Global Navigation Ends */
+
+section{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3em 0em;
+}
+
+section .product-card{
+    width: 25%;
+    height: 50%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 1em;
+    border: 1px solid var(--lightBg);
+}
+
+.name-price{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-name,
+.product-price{
+    font-weight: bold;
+}
+
+.product-price{
+    color: #00d600;
+}
+
+.product-description div:nth-child(1){
+    font-weight: bold;
+}
+
+.product-description div:nth-child(2){
+    color: var(--semiLight);
+}
+
+.cart-name{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+
+.cart-name div:nth-child(1){
+    font-weight: bold;
+}
+
+.edit-delete{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    text-align: center;
+}
+
+.edit-icon{
+    font-size: 1.3rem;
+    color: var(--green);
+}
+
+.delete-icon{
+    font-size: 1.3rem;
+    color: var(--red);
+}
+
+/* ------------------------------------------------------------------------------- */
+/* home page */
+
+.home-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* header */
+.home-header-container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.home-header-announcements{
+    border: 1px solid var(--lightText);
+    border-radius: 20px;
+    padding: 0.25em 1em;
+}
+
+.home-header-announcements a{
+    text-decoration: none;
+    color: var(--logoColor);
+    font-weight: bold;
+}
+
+.home-header-container h1{
+    font-size: 3.5rem;
+}
+
+.home-header-container p,
+.features-section > p{
+    font-size: 1.25rem;
+    text-align: center;
+    color: var(--semiLight);
+}
+
+.home-header-links{
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
+.home-header-links a{
+    text-decoration: none;
+}
+
+.home-header-links a:nth-child(1){
+    background: var(--logoColor);
+    border-radius: 5px;
+    color: var(--white);
+    padding: 0.5em 1em;
+}
+
+.home-header-links a:nth-child(2){
+    color: var(--black);
+    font-weight: bold;
+}
+
+/* features */
+.features-section{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.features-title{
+    color: var(--logoColor);
+    font-weight: bold;
+}
+
+.features-section h2{
+    font-size: 2rem;
+}
+
+/* .features-section > p{
+    font-size: 1.25rem;
+    text-align: center;
+    color: var(--semiLight);
+} */
+
+.features{
+    display: grid;
+    row-gap: 1em;
+    column-gap: 2em;
+    grid-template-columns: repeat(2, 3fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.feature{
+    display: flex;
+    gap: 1em;
+}
+
+.feature-left{
+    font-size: 1.5rem;
+    color: var(--logoColor);
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.feature-right p{
+    line-height: 1.5;
+    color: rgb(40, 40, 40);
+}
+
+/* careers section */
+.careers{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.careers h2{
+    font-size: 3rem;
+}
+
+.careers > p{
+    font-size: 1.25rem;
+    color: var(--semiLight);
+}
+
+.career-options{
+    color: var(--logoColor);
+}
+
+.career-options,
+.employee-infos{
+    display: flex;
+    gap: 2em;
+}
+
+/* .employee-infos{
+    display: flex;
+    gap: 2em;
+} */
+
+.employee-info p:nth-child(1){
+    font-size: 1.5rem;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* contact page */
+/* contact section */
+
+.contact-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.get-in-touch{
+    width: 80%;
+    height: 70%;
+    display: grid;
+    gap: 4em;
+    grid-template-columns: 1fr 2fr;
+}
+
+.get-in-touch-left{
+    padding: 3.25em 0;
+}
+
+.get-in-touch-left h2{
+    font-size: 2rem;
+}
+
+.get-in-touch-left p{
+    color: var(--semiLight);
+}
+
+.get-in-touch-right{
+    display: grid;
+    gap: 3em;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.contact{
+    padding: 1em;
+    border-radius: 10px;
+    background: #faf8ff;
+
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.contact-mail{
+    color: var(--logoColor);
+}
+
+.contact-number{
+    color: var(--semiLight);
+}
+
+.form-container{
+    text-align: center;
+}
+
+.form-container h2{
+    font-size: 2rem;
+}
+
+.form-container p{
+    color: var(--semiLight);
+}
+
+.form-container form{
+    width: 100%;
+    padding: 3em 1em;
+}
+
+.form-container form input{
+    color: #353535;
+    border: none;
+    background: #fbf8ff;
+    padding: 1em;
+    margin: 0.5em 0;
+    font-size: 1.1rem;
+    border-radius: 10px;
+}
+
+.form-container form input:nth-of-type(1){
+    width: 43%;
+}
+
+.form-container form input:nth-of-type(2){
+    width: 43%;
+}
+
+.form-container form input:nth-of-type(3){
+    width: 95%;
+}
+
+.form-container form textarea{
+    color: #353535;
+    border: none;
+    background: #fbf8ff;
+    padding: 1em;
+    margin: 0.5em 0;
+    font-size: 1.1rem;
+    width: 95%;
+    border-radius: 10px;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* about page */
+/* about section */
+
+.about-section{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-main{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about-main-left{
+    padding: 10em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.about-main-left h1{
+    font-size: 3.5rem;
+}
+
+.about-main-left p{
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--semiLight);
+}
+
+.about-main-right img{
+    /* background: url(./about-img.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    width: 100%;
+    height: 100%;
+}
+
+.mission{
+    padding: 1em;
+}
+
+.mission h2{
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.mission-container{
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.mission-container-left{
+    padding: 3em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.mission-container-left p{
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--semiLight);
+}
+
+.mission-container-right{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2em;
+}
+
+.current-status-title{
+    font-size: 3rem;
+}
+
+.current-status-sub-title{
+    color: var(--semiLight);
+}

@@ -1,0 +1,27 @@
+Controllers:
+
+    Controllers represent a collection of functions (actions) you want to call. Each action is responsible for collecting any required data and rendering any required view. The controller facilitates all communication between the model and the view.
+
+    The following are common controller actions and what they do:
+
+    VIEW ACTIONS:
+        index()             -> asks the model for all the rows of the resource in the database.
+                            -> renders the resource/index view, passing the rows as a local variable
+
+        show($request)      -> asks the model for a specific row in the database, using a passed ID
+                            -> renders the resource/show view, passing the row as a local variable
+
+        new()               -> renders the resource/new view
+
+        edit($request)      -> asks the model for a specific row in the database, using a passed ID
+                            -> renders the resource/edit view, passing the row as a local variable
+
+    PROCESSING ACTIONS:
+        create()            -> validates the POST body (form data) and asks the model
+                               to create a new row in the database
+
+        update()            -> validates the POST body (form data) and asks the model
+                               to update an existing row in the database
+
+        delete()            -> validates the POST body (form data) and asks the model
+                               to delete an existing row in the database

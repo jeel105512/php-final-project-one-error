@@ -1,0 +1,20 @@
+Naming Conventions:
+
+MVC relies upon naming conventions to support core functionality. Naming conventions can be a bit of a catch-up, but once you get use to it you'll appreciate their nature.
+
+Controllers: All controllers are named after the pluralized version of the resource:
+    ResourcesController (or) ResourcesController
+
+Models: All models are named after the singular version of the resource:
+    ResourceModel (or) ResourceModel
+
+Views: All views are placed in a folder named after the controller. Each view is named after the action that will render it:
+    resources/index (or) resources/index
+
+Routes: Routes can be anything, but common convention is to name the route with the resource and the action. There are some default routes though:
+    GET => /resource (or) /resource -> calls the ResourceController action index()
+    GET => /resource/:id (or) /resource/:id -> calls the ResourceController action show($id)
+
+None default routes will display the action in the route as well:
+    GET => /resource/edit/:id (or) /resource/edit/:id -> calls the ResourceController action edit($id)
+    POST => /resource/create (or) /resource/create -> calls the ResourceController action create()

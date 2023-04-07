@@ -1,0 +1,12 @@
+Views:
+
+    Views are responsible for the presentation portion of your application. They will provide the visual element for your end user to see and interact with. Views are generally named by their action counterpart, and kept within a folder of the controllers name. This naming convention makes it easy to track down your views when troubleshooting, and creates a better organization structure.
+
+    Common views for a resource are:
+
+    resource/index  -> provides a view of all the resource rows (usually in a table)
+    resource/show   -> provides a view of one resource row
+    resource/new    -> provides a form for creating a new resource
+    resource/edit   -> provides a form for updating an existing resource
+    resource/_form  -> an abstracted partial to maintain form validation logic across
+                       both the new and edit views
