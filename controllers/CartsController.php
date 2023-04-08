@@ -43,6 +43,10 @@
         if(!is_authorized()) return;
         // Validate field requirements
         validate($_POST, "carts/new");
+
+        $_POST = sanitize($_POST);
+
+        $_POST = normalize($_POST);
         
         // Write to database if good
         CartModel::create($_POST, $_SESSION["user"]);
@@ -59,6 +63,10 @@
 
         // Validate field requirements
         validate($_POST, "carts/edit/{$_POST['id']}");
+        
+        $_POST = sanitize($_POST);
+
+        $_POST = normalize($_POST);
 
         // Write to database if good
         CartModel::update($_POST, $_SESSION["user"]);
@@ -96,9 +104,34 @@
             }
         }
 
+        // validate cart name
+        if(!preg_match("/^[a-zA-Z0-9\s-]+$/", $package["cart_name"])){
+            $errors[]= "Cart's name can only contain letters, numbers, spaces and dashes";
+        }
+
+        if(strlen($package["cart_name"]) < 2 || strlen($package["cart_name"]) > 50){
+            $errors[]= "Cart's name must be between 2-50 characters long";
+        }
+
         if (count($errors)) {
             return redirect($error_redirect_path, ["form_fields" => $package, "errors" => $errors]);
         }
+    }
+
+    function sanitize($package){
+        // Sanitize the cart's name
+        $package["cart_name"] = htmlspecialchars($package["cart_name"]);
+
+        return $package;
+    }
+
+    function normalize($package){
+        // Normalize cart's name
+        $package["cart_name"] = trim(strtolower($package["cart_name"]));
+        // Replace any multiple "   " with a single " "
+        $package["cart_name"] = preg_replace('/\s+/', ' ', $package["cart_name"]);
+
+        return $package;
     }
 
     function is_authorized(){
